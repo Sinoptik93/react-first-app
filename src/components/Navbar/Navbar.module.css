@@ -1,0 +1,16 @@
+.nav {
+  grid-area: n;
+  background-color: gray;
+}
+
+div.item {
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: gold;
+}

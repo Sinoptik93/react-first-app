@@ -1,0 +1,12 @@
+.content {
+  grid-area: c;
+  background-color: aqua;
+}
+
+.content img {
+  width: 900px;
+}
+
+.posts {
+  background-color:orange;
+}

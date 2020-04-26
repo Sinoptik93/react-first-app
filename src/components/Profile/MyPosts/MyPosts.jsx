@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './MyPosts.module.css'
 import Post from './Posts/Post';
 
-const MyPosts = () => {
+const MyPosts = (props) => {
   return (
     <div>
       My post
@@ -14,10 +14,8 @@ const MyPosts = () => {
         <button>Test</button>
       </div>
       <div className={classes.posts}>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Post message='Hello!'/>
+        <Post message='Message test'/>
       </div>
     </div>
   )

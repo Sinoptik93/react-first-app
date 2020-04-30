@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './../Sitebar.module.css'
 
 const FriendItem = (props) => {
-  debugger;
   return (
     <div className={classes.friend}>
       <div className={classes.friendIcon}>

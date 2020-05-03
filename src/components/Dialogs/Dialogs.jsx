@@ -2,6 +2,7 @@ import React from 'react'
 import classes from './Dialogs.module.css'
 import DialogItem from './Messages/DialogItem/DialogItem'
 import Message from './Messages/Message/Message'
+import TextArea from './Messages/TextArea/TextArea'
 
 const Dialogs = (props) => {
   let dialogElements = props.state.dialogsData.map((dialogsItem) => (
@@ -11,10 +12,6 @@ const Dialogs = (props) => {
   let messagesElements = props.state.messagesData.map((messageItem) => (
     <Message message={messageItem.message} />
   ))
-  const messageArea = React.createRef();
-  const func = () => {
-    alert (messageArea.current.value);
-  }
 
   return (
     <div className={classes.dialogs}>
@@ -25,12 +22,7 @@ const Dialogs = (props) => {
 
       <div className={classes.messages}>
         {messagesElements}
-        <div className={classes.textArea}>
-          <textarea ref={ messageArea }></textarea>
-          <div>
-            <button onClick={ func }>Отправить</button>
-          </div>
-        </div>
+        <TextArea updateMessageArea={props.updateMessageArea} addMessage={props.addMessage}/>
       </div>
       
       

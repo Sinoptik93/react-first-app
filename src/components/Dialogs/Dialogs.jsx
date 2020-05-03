@@ -5,11 +5,11 @@ import Message from './Messages/Message/Message'
 import TextArea from './Messages/TextArea/TextArea'
 
 const Dialogs = (props) => {
-  let dialogElements = props.state.dialogsData.map((dialogsItem) => (
+  let dialogElements = props.dialogPage.dialogsData.map((dialogsItem) => (
     <DialogItem name={dialogsItem.name} id={dialogsItem.id} />
   ))
 
-  let messagesElements = props.state.messagesData.map((messageItem) => (
+  let messagesElements = props.dialogPage.messagesData.map((messageItem) => (
     <Message message={messageItem.message} />
   ))
 
@@ -22,7 +22,7 @@ const Dialogs = (props) => {
 
       <div className={classes.messages}>
         {messagesElements}
-        <TextArea updateMessageArea={props.updateMessageArea} addMessage={props.addMessage}/>
+        <TextArea dispatch={props.dispatch} />
       </div>
       
       

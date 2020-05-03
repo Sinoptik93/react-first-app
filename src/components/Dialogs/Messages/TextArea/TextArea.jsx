@@ -1,18 +1,18 @@
 import React from 'react'
 import classes from './TextArea.module.css'
-import {updateMessageAreaCreator, sendMessageCreator} from '../../../../redux/state';
+import {updateMessageAreaCreator, sendMessageCreator} from '../../../../redux/dialogsReducer';
 
 const TextArea = (props) => {
   let newMessageArea = React.createRef();
 
   let addMessage = () => {
-    props.dispatch(sendMessageCreator());
+    props.dispatch( sendMessageCreator() );
     newMessageArea.current.value = '';
   }
 
   let onPostChange = () => {
     let text = newMessageArea.current.value;
-    props.dispatch(updateMessageAreaCreator(text));
+    props.dispatch( updateMessageAreaCreator(text));
   }
 
   return (
